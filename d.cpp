@@ -48,6 +48,10 @@ void file_combine()
      
 	 while ((i = fread (buf, sizeof(char), sizeof (buf), addedfile)) > 0)
             fwrite (buf, 1, i, targetImage) ;
+            
+			fclose(mainfile);
+            fclose(addedfile);
+            fclose(mainfile);
 	 
 }
 void extract_file()
@@ -57,18 +61,18 @@ void extract_file()
 int main(){
 
 	int op;
-	while(true)
+//	while(true)
 	{
-		printf("Type process type. \n1 = combine two files,\n2=extract combined file\n");
-		scanf("%d",&op);
-		if(op==1)
+//		printf("Type process type. \n1 = combine two files,\n2=extract combined file\n");
+	//	scanf("%d",&op);
+	//	if(op==1)
 		{
 			read_file();
 			file_combine();
 		}
-		if(op==2)
+	//	if(op==2)
 		{
-			extract_file();
+	//		extract_file();
 		}
 	}
 }
